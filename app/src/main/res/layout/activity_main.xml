@@ -4,15 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity"
+    android:background="@color/mesa_poker">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageHeart"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="60dp"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintStart_toStartOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/logo"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textJogar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="serif"
+        android:text="JOGAR"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageHeart"
+        app:layout_constraintStart_toEndOf="@id/imageHeart"
+        app:layout_constraintTop_toTopOf="@id/imageHeart" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageSpade"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_spade"
+        app:layout_constraintStart_toStartOf="@id/imageHeart"
+        app:layout_constraintTop_toBottomOf="@id/imageHeart"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textRegras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="REGRAS"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/imageSpade"
+        app:layout_constraintTop_toTopOf="@id/imageSpade"
+        app:layout_constraintBottom_toBottomOf="@id/imageSpade"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageDiamond"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_diamond"
+        app:layout_constraintStart_toStartOf="@id/imageSpade"
+        app:layout_constraintTop_toBottomOf="@id/imageSpade"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textRaking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="RANKING"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/imageDiamond"
+        app:layout_constraintTop_toTopOf="@id/imageDiamond"
+        app:layout_constraintBottom_toBottomOf="@id/imageDiamond"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageClover"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_clover"
+        app:layout_constraintStart_toStartOf="@id/imageDiamond"
+        app:layout_constraintTop_toBottomOf="@id/imageDiamond"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="SAIR"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/imageClover"
+        app:layout_constraintTop_toTopOf="@id/imageClover"
+        app:layout_constraintBottom_toBottomOf="@id/imageClover"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
