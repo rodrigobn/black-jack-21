@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="mesa_poker">#277A31</color>
+    <color name="mesa_poker">#427C69</color>
+    <color name="splash_screen">#919493</color>
 </resources>
