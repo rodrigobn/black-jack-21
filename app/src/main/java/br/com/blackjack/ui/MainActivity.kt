@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         binding.textJogar.setOnClickListener {
             openGame()
         }
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun openRegras() {
         //TODO("Not yet implemented")
+        //var carta = Carta("paus", 10, R.drawable.ic_clover)
     }
 
     private fun openRaking() {
