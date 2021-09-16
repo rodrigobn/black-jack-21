@@ -67,6 +67,9 @@ dependencies {
     implementation "org.koin:koin-androidx-scope:2.1.6" // for Lifecycle scoping
     implementation "org.koin:koin-androidx-viewmodel:2.1.6" // for Android Architecture ViewModel
 
+    //
+    implementation 'com.google.code.gson:gson:2.8.8'
+
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

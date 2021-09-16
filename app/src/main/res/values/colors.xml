@@ -11,4 +11,7 @@
     <color name="mesa_poker">#427C69</color>
     <color name="mesa_poker_dark">#0F3F25</color>
     <color name="splash_screen">#919493</color>
+
+
+    <color name="stop">#F10B0B</color>
 </resources>
