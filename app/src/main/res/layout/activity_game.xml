@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/mesa_poker_dark"
-    tools:context=".ui.GameActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_sua_pontuacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:layout_margin="6dp"
-        android:text="@string/pontuacao_jogador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <data>
+        <variable
+            name="gameViewModel"
+            type="br.com.blackjack.ui.GameViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mesa_poker_dark">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_sua_pontuacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="6dp"
+            android:text="@{String.format(@string/pontuacao_jogador, gameViewModel.pontuacaoRodadaJogador)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_pontuacao_computador"
@@ -25,7 +33,7 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:layout_margin="6dp"
-        android:text="@string/pontuacao_banca"
+        android:text="@{String.format(@string/pontuacao_banca, gameViewModel.pontuacaoRodadaBanca)}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_sua_pontuacao"/>
 
@@ -176,4 +184,5 @@
         app:layout_constraintEnd_toStartOf="@id/image_card_banca_5"
         app:layout_constraintStart_toEndOf="@id/button_mais_uma"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

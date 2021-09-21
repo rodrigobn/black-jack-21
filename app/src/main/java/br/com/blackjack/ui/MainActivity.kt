@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun openRegras() {
         //TODO("Not yet implemented")
-        //var carta = Carta("paus", 10, R.drawable.ic_clover)
     }
 
     private fun openRaking() {
