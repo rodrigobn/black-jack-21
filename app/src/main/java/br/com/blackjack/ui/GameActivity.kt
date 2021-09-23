@@ -4,7 +4,6 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.activity.viewModels
@@ -162,6 +161,11 @@ class GameActivity : AppCompatActivity() {
             return
         }
 
+        if (pontuacaoRodadaBanca == pontuacaoRodadaJogador){
+            dialogEmpate()
+            return
+        }
+
         if (pontuacaoRodadaBanca > 21){
             dialogVitoriaNormal()
             return
@@ -310,10 +314,33 @@ class GameActivity : AppCompatActivity() {
                     dialog.dismiss()
                 })
         }
-
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
 
+    private fun dialogEmpate() {
+        empate()
+        val builder: AlertDialog.Builder = this.let {
+            AlertDialog.Builder(it)
+        }
+        builder.setCancelable(false)
+        builder.setMessage("O jogo empatou")
+            .setTitle("Empate")
+
+        builder.apply {
+            setPositiveButton("Novo jogo",
+                DialogInterface.OnClickListener { dialog, id ->
+                    resetGame()
+                    dialog.dismiss()
+                })
+            setNegativeButton("Sair",
+                DialogInterface.OnClickListener { dialog, id ->
+                    finish()
+                    dialog.dismiss()
+                })
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     private fun vitoriaJogador() {
@@ -322,12 +349,7 @@ class GameActivity : AppCompatActivity() {
         viewModel.jogador.value!!.vitorias = viewModel.jogador.value!!.vitorias?.plus(1)
         viewModel.jogador.value!!.jogos = viewModel.jogador.value!!.jogos?.plus(1)
         viewModel.saveJogador(viewModel.jogador.value!!)
-        Log.d("xxx", "NOME: ${viewModel.jogador.value!!.nome}")
-        Log.d("xxx", "blackJack: ${viewModel.jogador.value!!.blackJack}")
-        Log.d("xxx", "derrotas: ${viewModel.jogador.value!!.derrotas}")
-        Log.d("xxx", "vitorias: ${viewModel.jogador.value!!.vitorias}")
-        Log.d("xxx", "jogos: ${viewModel.jogador.value!!.jogos}")
-
+        mostrarDados()
     }
 
     private fun vitoriaBanca() {
@@ -336,6 +358,16 @@ class GameActivity : AppCompatActivity() {
         viewModel.jogador.value!!.derrotas = viewModel.jogador.value!!.derrotas?.plus(1)
         viewModel.jogador.value!!.jogos = viewModel.jogador.value!!.jogos?.plus(1)
         viewModel.saveJogador(viewModel.jogador.value!!)
+        mostrarDados()
+    }
+
+    private fun empate() {
+        binding.buttonSair.visibility = VISIBLE
+        binding.buttonNovoJogo.visibility = VISIBLE
+        viewModel.jogador.value!!.empates = viewModel.jogador.value!!.empates?.plus(1)
+        viewModel.jogador.value!!.jogos = viewModel.jogador.value!!.jogos?.plus(1)
+        viewModel.saveJogador(viewModel.jogador.value!!)
+        mostrarDados()
     }
 
     private fun resetGame() {
@@ -363,5 +395,16 @@ class GameActivity : AppCompatActivity() {
         binding.imageBaralho.setImageResource(R.drawable.carta_fundo)
         binding.textSuaPontuacao.setText(R.string.pontuacao_jogador)
         binding.textPontuacaoComputador.setText(R.string.pontuacao_banca)
+    }
+
+    private fun mostrarDados() {
+        Log.d("xxx", "Dados:")
+        Log.d("xxx", "NOME: ${viewModel.jogador.value!!.nome}")
+        Log.d("xxx", "blackJack: ${viewModel.jogador.value!!.blackJack}")
+        Log.d("xxx", "derrotas: ${viewModel.jogador.value!!.derrotas}")
+        Log.d("xxx", "vitorias: ${viewModel.jogador.value!!.vitorias}")
+        Log.d("xxx", "empates: ${viewModel.jogador.value!!.empates}")
+        Log.d("xxx", "jogos: ${viewModel.jogador.value!!.jogos}")
+        Log.d("xxx", " ")
     }
 }

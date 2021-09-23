@@ -6,6 +6,7 @@ class Jogador(
     var blackJack: Int? = 0,
     var derrotas: Int? = 0,
     var vitorias: Int? = 0,
+    var empates: Int? = 0,
     var jogos: Int? = 0
 ) {
 

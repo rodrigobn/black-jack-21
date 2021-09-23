@@ -1,7 +1,6 @@
 package br.com.blackjack.ui
 
 import androidx.lifecycle.ViewModel
-import br.com.blackjack.data.model.Carta
 import br.com.blackjack.data.model.Jogador
 import br.com.blackjack.di.TinyDB
 import com.hadilq.liveevent.LiveEvent
@@ -24,13 +23,23 @@ class GameViewModel: ViewModel() {
     var blackJack = LiveEvent<Int>()
 
     fun saveJogador(jogador: Jogador){
-        jogadores.value?.add(jogador)
-        val list = arrayListOf<Any>()
-        for (jogador in jogadores.value!!) {
-            list.add(jogador)
+        //SE FOR UM JOGADOR NOVO
+        if (jogador.nome?.let { isJogadorNovo(it) } == false){
+            jogadores.value?.add(jogador)
+            val list = arrayListOf<Any>()
+            for (jogador in jogadores.value!!) {
+                list.add(jogador)
+            }
+            tinyDB.value!!.putListObject(KEY_JOGADORES, list)
+            this.jogador.value = jogador
+        } else {
+            for (i in jogadores.value?.indices!!){
+                if (jogadores.value?.get(i)?.nome.toString()
+                        .equals(jogador.nome.toString(), ignoreCase = true)){
+                    jogadores.value?.set(i, jogador)
+                }
+            }
         }
-        tinyDB.value!!.putListObject(KEY_JOGADORES, list)
-        this.jogador.value = jogador
     }
 
     fun isJogadorNovo(nome: String): Boolean {
