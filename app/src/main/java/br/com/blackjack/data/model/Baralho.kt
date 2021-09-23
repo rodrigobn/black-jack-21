@@ -31,9 +31,9 @@ class Baralho {
         cartas.add(Carta(Carta.Naipes.COPAS, 8, R.drawable.oito_copas))
         cartas.add(Carta(Carta.Naipes.COPAS, 9, R.drawable.nove_copas))
         cartas.add(Carta(Carta.Naipes.COPAS, 10, R.drawable.dez_copas))
-        cartas.add(Carta(Carta.Naipes.COPAS, 11, R.drawable.j11_copas))
-        cartas.add(Carta(Carta.Naipes.COPAS, 12, R.drawable.q12_copas))
-        cartas.add(Carta(Carta.Naipes.COPAS, 13, R.drawable.k13_copas))
+        cartas.add(Carta(Carta.Naipes.COPAS, 10, R.drawable.j11_copas))
+        cartas.add(Carta(Carta.Naipes.COPAS, 10, R.drawable.q12_copas))
+        cartas.add(Carta(Carta.Naipes.COPAS, 10, R.drawable.k13_copas))
     }
 
     private fun adicionaEspadas() {
@@ -47,9 +47,9 @@ class Baralho {
         cartas.add(Carta(Carta.Naipes.ESPADAS, 8, R.drawable.oito_espadas))
         cartas.add(Carta(Carta.Naipes.ESPADAS, 9, R.drawable.nove_espadas))
         cartas.add(Carta(Carta.Naipes.ESPADAS, 10, R.drawable.dez_espadas))
-        cartas.add(Carta(Carta.Naipes.ESPADAS, 11, R.drawable.j11_espadas))
-        cartas.add(Carta(Carta.Naipes.ESPADAS, 12, R.drawable.q12_espadas))
-        cartas.add(Carta(Carta.Naipes.ESPADAS, 13, R.drawable.k13_espadas))
+        cartas.add(Carta(Carta.Naipes.ESPADAS, 10, R.drawable.j11_espadas))
+        cartas.add(Carta(Carta.Naipes.ESPADAS, 10, R.drawable.q12_espadas))
+        cartas.add(Carta(Carta.Naipes.ESPADAS, 10, R.drawable.k13_espadas))
     }
 
     private fun adicionaOuro() {
@@ -63,9 +63,9 @@ class Baralho {
         cartas.add(Carta(Carta.Naipes.OURO, 8, R.drawable.oito_ouro))
         cartas.add(Carta(Carta.Naipes.OURO, 9, R.drawable.nove_ouro))
         cartas.add(Carta(Carta.Naipes.OURO, 10, R.drawable.dez_ouro))
-        cartas.add(Carta(Carta.Naipes.OURO, 11, R.drawable.j11_ouro))
-        cartas.add(Carta(Carta.Naipes.OURO, 12, R.drawable.q12_ouro))
-        cartas.add(Carta(Carta.Naipes.OURO, 13, R.drawable.k13_ouro))
+        cartas.add(Carta(Carta.Naipes.OURO, 10, R.drawable.j11_ouro))
+        cartas.add(Carta(Carta.Naipes.OURO, 10, R.drawable.q12_ouro))
+        cartas.add(Carta(Carta.Naipes.OURO, 10, R.drawable.k13_ouro))
     }
 
     private fun adicionaPaus() {
@@ -79,9 +79,9 @@ class Baralho {
         cartas.add(Carta(Carta.Naipes.PAUS, 8, R.drawable.oito_paus))
         cartas.add(Carta(Carta.Naipes.PAUS, 9, R.drawable.nove_paus))
         cartas.add(Carta(Carta.Naipes.PAUS, 10, R.drawable.dez_paus))
-        cartas.add(Carta(Carta.Naipes.PAUS, 11, R.drawable.j11_paus))
-        cartas.add(Carta(Carta.Naipes.PAUS, 12, R.drawable.q12_paus))
-        cartas.add(Carta(Carta.Naipes.PAUS, 13, R.drawable.k13_paus))
+        cartas.add(Carta(Carta.Naipes.PAUS, 10, R.drawable.j11_paus))
+        cartas.add(Carta(Carta.Naipes.PAUS, 10, R.drawable.q12_paus))
+        cartas.add(Carta(Carta.Naipes.PAUS, 10, R.drawable.k13_paus))
     }
 
     private fun embaralhar(cartas: ArrayList<Carta>, n: Int) {

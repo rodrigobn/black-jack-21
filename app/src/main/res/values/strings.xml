@@ -11,6 +11,10 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="start">Começar</string>
     <string name="tittle_name_dialog">Qual seu nome?</string>
+    <string name="tittle_victory_black_jack">Parabéns</string>
+    <string name="message_victory_black_jack">Você ganhou com 21 pontos BLACKJACK</string>
     <string name="pontuacao_jogador">Sua pontuação: %s Pontos</string>
     <string name="pontuacao_banca">Pontuação banca: %s Pontos</string>
+    <string name="button_jogar_novamente">Novo jogo</string>
+    <string name="button_sair">Sair</string>
 </resources>

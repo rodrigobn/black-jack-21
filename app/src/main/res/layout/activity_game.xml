@@ -23,6 +23,7 @@
             android:textSize="16sp"
             android:layout_margin="6dp"
             android:text="@{String.format(@string/pontuacao_jogador, gameViewModel.pontuacaoRodadaJogador)}"
+            tools:text="@string/pontuacao_jogador"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -34,6 +35,7 @@
         android:textSize="16sp"
         android:layout_margin="6dp"
         android:text="@{String.format(@string/pontuacao_banca, gameViewModel.pontuacaoRodadaBanca)}"
+        tools:text="@string/pontuacao_banca"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_sua_pontuacao"/>
 
@@ -55,6 +57,7 @@
         android:layout_height="150dp"
         android:src="@drawable/carta_fundo"
         android:layout_marginStart="20dp"
+        android:elevation="1dp"
         app:layout_constraintTop_toBottomOf="@id/image_baralho"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -164,25 +167,50 @@
         android:id="@+id/button_mais_uma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginBottom="90dp"
         android:text="+1"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/image_card_jogador_5"
-        app:layout_constraintBottom_toBottomOf="@id/image_card_jogador_5"
-        app:layout_constraintStart_toEndOf="@id/image_card_jogador_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/button_parar"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_parar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="200dp"
         android:backgroundTint="@color/stop"
         android:text="Parar"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintTop_toTopOf="@id/button_mais_uma"
         app:layout_constraintBottom_toBottomOf="@id/button_mais_uma"
-        app:layout_constraintEnd_toStartOf="@id/image_card_banca_5"
-        app:layout_constraintStart_toEndOf="@id/button_mais_uma"/>
+        app:layout_constraintStart_toEndOf="@id/button_mais_uma"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_novo_jogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="novo jogo"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/button_mais_uma"
+            app:layout_constraintEnd_toEndOf="@id/button_mais_uma"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_sair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sair"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/button_novo_jogo"
+            app:layout_constraintStart_toStartOf="@id/button_parar"
+            app:layout_constraintEnd_toEndOf="@id/button_parar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

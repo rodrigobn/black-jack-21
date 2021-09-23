@@ -11,8 +11,6 @@ import java.util.ArrayList
 class GameViewModel: ViewModel() {
 
     companion object {
-        const val KEY_NOME_JOGADOR = "nome_jogador"
-        const val KEY_PONTUACAO_RODADA = "pontuacao_rodada"
         const val KEY_JOGADORES = "jogadores"
     }
 
@@ -21,12 +19,9 @@ class GameViewModel: ViewModel() {
     var jogador = LiveEvent<Jogador>()
     var jogadores = LiveEvent<ArrayList<Jogador>>()
 
-    var baralho = LiveEvent<MutableList<Carta>>()
-
     var pontuacaoRodadaJogador = LiveEvent<Int>()
     var pontuacaoRodadaBanca = LiveEvent<Int>()
     var blackJack = LiveEvent<Int>()
-    var rodada = LiveEvent<Int>()
 
     fun saveJogador(jogador: Jogador){
         jogadores.value?.add(jogador)
