@@ -24,7 +24,7 @@ class GameViewModel: ViewModel() {
 
     fun saveJogador(jogador: Jogador){
         //SE FOR UM JOGADOR NOVO
-        if (jogador.nome?.let { isJogadorNovo(it) } == false){
+        if (isJogadorNovo(jogador.nome!!)){
             jogadores.value?.add(jogador)
             val list = arrayListOf<Any>()
             for (jogador in jogadores.value!!) {
@@ -34,21 +34,25 @@ class GameViewModel: ViewModel() {
             this.jogador.value = jogador
         } else {
             for (i in jogadores.value?.indices!!){
-                if (jogadores.value?.get(i)?.nome.toString()
-                        .equals(jogador.nome.toString(), ignoreCase = true)){
+                if (jogadores.value?.get(i)?.nome.toString().toLowerCase() == jogador.nome.toString().toLowerCase()){
                     jogadores.value?.set(i, jogador)
                 }
             }
+            val list = arrayListOf<Any>()
+            for (jogador in jogadores.value!!) {
+                list.add(jogador)
+            }
+            tinyDB.value!!.putListObject(KEY_JOGADORES, list)
         }
     }
 
     fun isJogadorNovo(nome: String): Boolean {
         for (jogador in jogadores.value!!) {
             if (jogador.nome.toString().toLowerCase() == nome.toLowerCase()) {
-                return true
+                return false
             }
         }
-        return false
+        return true
     }
 
     fun getJogador(nome: String): Jogador? {

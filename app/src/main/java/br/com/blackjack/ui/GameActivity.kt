@@ -15,9 +15,11 @@ import br.com.blackjack.data.model.Carta
 import br.com.blackjack.data.model.Jogador
 import br.com.blackjack.databinding.ActivityGameBinding
 import br.com.blackjack.di.TinyDB
+import br.com.blackjack.ui.GameViewModel.Companion.KEY_JOGADORES
 import kotlinx.android.synthetic.main.message_box.view.*
 import kotlinx.android.synthetic.main.message_vitoria_black_jack.view.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class GameActivity : AppCompatActivity() {
 
@@ -29,7 +31,7 @@ class GameActivity : AppCompatActivity() {
     private val rand = Random()
 
     private lateinit var baralho: MutableList<Carta>
-    private lateinit var jogador: Jogador
+    //private lateinit var jogador: Jogador
 
     private val viewModel: GameViewModel by viewModels()
 
@@ -43,6 +45,20 @@ class GameActivity : AppCompatActivity() {
 
         //LIMPAR
         viewModel.tinyDB.value?.clear()
+
+        //Lista
+        val jogadores = viewModel.getJogadores()
+        Log.d("xxx", "nome: ${jogadores}")
+        for (jogador in jogadores){
+            Log.d("xxx", "nome: ${jogador.nome}")
+            Log.d("xxx", "empates: ${jogador.empates}")
+            Log.d("xxx", "jogos: ${jogador.jogos}")
+            Log.d("xxx", "derrotas: ${jogador.derrotas}")
+            Log.d("xxx", "blackJack: ${jogador.blackJack}")
+            Log.d("xxx", "vitorias: ${jogador.vitorias}")
+            Log.d("xxx", "pontosTotal: ${jogador.pontosTotal}")
+            Log.d("xxx", "\n")
+        }
 
         binding.buttonMaisUma.setOnClickListener {
             jogadaJogador()
@@ -188,8 +204,7 @@ class GameActivity : AppCompatActivity() {
         baralho = Baralho().cartas
         viewModel.tinyDB.value = TinyDB(this)
         viewModel.jogadores.value = viewModel.getJogadores()
-        jogador = Jogador()
-        //viewModel.jogador.value = Jogador()
+        viewModel.jogador.value = Jogador()
     }
 
     private fun initView() {
@@ -207,12 +222,11 @@ class GameActivity : AppCompatActivity() {
             if (messageBoxView.edit_text_name.text.isNullOrEmpty()){
                 return@setOnClickListener
             }
-            if (!viewModel.isJogadorNovo(messageBoxView.edit_text_name.toString())){
-                val novoJogador = Jogador()
-                novoJogador.nome = messageBoxView.edit_text_name.text.toString()
-                viewModel.saveJogador(novoJogador)
+            if (viewModel.isJogadorNovo(messageBoxView.edit_text_name.toString())){
+                viewModel.jogador.value?.nome = messageBoxView.edit_text_name.text.toString()
+                viewModel.saveJogador(viewModel.jogador.value!!)
             } else {
-                dialogJogadorExiste(viewModel.getJogador(messageBoxView.edit_text_name.toString()))
+                dialogJogadorExiste(viewModel.getJogador(messageBoxView.edit_text_name.text.toString()))
             }
             messageBoxInstance.dismiss()
         }
@@ -372,7 +386,6 @@ class GameActivity : AppCompatActivity() {
 
     private fun resetGame() {
         baralho = Baralho().cartas
-        jogador = viewModel.jogador.value!!
         rodada = 0
         pontuacaoRodadaJogador = 0
         pontuacaoRodadaBanca = 0
