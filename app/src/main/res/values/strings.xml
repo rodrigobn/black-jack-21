@@ -17,4 +17,5 @@
     <string name="pontuacao_banca">Pontuação banca: %s Pontos</string>
     <string name="button_jogar_novamente">Novo jogo</string>
     <string name="button_sair">Sair</string>
+    <string name="title_delete">Deletar</string>
 </resources>

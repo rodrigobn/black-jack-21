@@ -35,7 +35,7 @@ public class TinyDB {
 
     /**
      * Decodes the Bitmap from 'path' and returns it
-     * @param path image path
+     * @param path colocacao path
      * @return the Bitmap from 'path'
      */
     public Bitmap getImage(String path) {
@@ -53,8 +53,8 @@ public class TinyDB {
 
 
     /**
-     * Returns the String path of the last saved image
-     * @return string path of the last saved image
+     * Returns the String path of the last saved colocacao
+     * @return string path of the last saved colocacao
      */
     public String getSavedImagePath() {
         return lastImagePath;
@@ -64,9 +64,9 @@ public class TinyDB {
     /**
      * Saves 'theBitmap' into folder 'theFolder' with the name 'theImageName'
      * @param theFolder the folder path dir you want to save it to e.g "DropBox/WorkImages"
-     * @param theImageName the name you want to assign to the image file e.g "MeAtLunch.png"
-     * @param theBitmap the image you want to save as a Bitmap
-     * @return returns the full path(file system address) of the saved image
+     * @param theImageName the name you want to assign to the colocacao file e.g "MeAtLunch.png"
+     * @param theBitmap the colocacao you want to save as a Bitmap
+     * @return returns the full path(file system address) of the saved colocacao
      */
     public String putImage(String theFolder, String theImageName, Bitmap theBitmap) {
         if (theFolder == null || theImageName == null || theBitmap == null)
@@ -86,18 +86,18 @@ public class TinyDB {
 
     /**
      * Saves 'theBitmap' into 'fullPath'
-     * @param fullPath full absolute path of the image file e.g. "..Images/MeAtLunch.png"
-     * @param theBitmap the image you want to save as a Bitmap
-     * @return true if image was saved, false otherwise
+     * @param fullPath full absolute path of the colocacao file e.g. "..Images/MeAtLunch.png"
+     * @param theBitmap the colocacao you want to save as a Bitmap
+     * @return true if colocacao was saved, false otherwise
      */
     public boolean putImageWithFullPath(String fullPath, Bitmap theBitmap) {
         return !(fullPath == null || theBitmap == null) && saveBitmap(fullPath, theBitmap);
     }
 
     /**
-     * Creates the path for the image with name 'imageName' in DEFAULT_APP.. directory
-     * @param imageName name of the image
-     * @return the full path of the image. If it failed to create directory, return empty string
+     * Creates the path for the colocacao with name 'imageName' in DEFAULT_APP.. directory
+     * @param imageName name of the colocacao
+     * @return the full path of the colocacao. If it failed to create directory, return empty string
      */
     private String setupFullPath(String imageName) {
         File mFolder = new File(context.getExternalFilesDir(null), DEFAULT_APP_IMAGEDATA_DIRECTORY);
@@ -114,8 +114,8 @@ public class TinyDB {
 
     /**
      * Saves the Bitmap as a PNG file at path 'fullPath'
-     * @param fullPath path of the image file
-     * @param bitmap the image as a Bitmap
+     * @param fullPath path of the colocacao file
+     * @param bitmap the colocacao as a Bitmap
      * @return true if it successfully saved, false otherwise
      */
     private boolean saveBitmap(String fullPath, Bitmap bitmap) {
@@ -487,8 +487,8 @@ public class TinyDB {
     }
 
     /**
-     * Delete image file at 'path'
-     * @param path path of image file
+     * Delete colocacao file at 'path'
+     * @param path path of colocacao file
      * @return true if it successfully deleted, false otherwise
      */
     public boolean deleteImage(String path) {

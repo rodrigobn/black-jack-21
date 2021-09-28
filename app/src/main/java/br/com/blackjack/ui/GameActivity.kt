@@ -44,19 +44,18 @@ class GameActivity : AppCompatActivity() {
         initView()
 
         //LIMPAR
-        viewModel.tinyDB.value?.clear()
+        //viewModel.tinyDB.value?.clear()
 
         //Lista
         val jogadores = viewModel.getJogadores()
         Log.d("xxx", "nome: ${jogadores}")
         for (jogador in jogadores){
             Log.d("xxx", "nome: ${jogador.nome}")
-            Log.d("xxx", "empates: ${jogador.empates}")
-            Log.d("xxx", "jogos: ${jogador.jogos}")
-            Log.d("xxx", "derrotas: ${jogador.derrotas}")
-            Log.d("xxx", "blackJack: ${jogador.blackJack}")
-            Log.d("xxx", "vitorias: ${jogador.vitorias}")
-            Log.d("xxx", "pontosTotal: ${jogador.pontosTotal}")
+            Log.d("xxx", "empates: ${jogador.blackJack}")
+            Log.d("xxx", "jogos: ${jogador.derrotas}")
+            Log.d("xxx", "derrotas: ${jogador.vitorias}")
+            Log.d("xxx", "blackJack: ${jogador.empates}")
+            Log.d("xxx", "vitorias: ${jogador.jogos}")
             Log.d("xxx", "\n")
         }
 
@@ -222,7 +221,7 @@ class GameActivity : AppCompatActivity() {
             if (messageBoxView.edit_text_name.text.isNullOrEmpty()){
                 return@setOnClickListener
             }
-            if (viewModel.isJogadorNovo(messageBoxView.edit_text_name.toString())){
+            if (viewModel.isJogadorNovo(messageBoxView.edit_text_name.text.toString())){
                 viewModel.jogador.value?.nome = messageBoxView.edit_text_name.text.toString()
                 viewModel.saveJogador(viewModel.jogador.value!!)
             } else {

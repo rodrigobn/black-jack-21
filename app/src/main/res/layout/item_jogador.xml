@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/background_arredondado"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxEms="12"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/colocacao"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Rodrigo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/colocacao"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                tools:text="1º"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_black_jack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="BlackJack"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/colocacao"
+                app:layout_constraintTop_toBottomOf="@id/name"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_star"
+                android:layout_marginStart="4dp"
+                app:layout_constraintTop_toTopOf="@id/value_black_jack"
+                app:layout_constraintStart_toEndOf="@id/value_black_jack"
+                app:layout_constraintBottom_toBottomOf="@id/value_black_jack"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/value_black_jack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/text_black_jack"
+                app:layout_constraintEnd_toEndOf="@id/text_black_jack"
+                app:layout_constraintTop_toBottomOf="@id/text_black_jack"
+                tools:text="0"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_vitorias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Vitorias"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/text_black_jack"
+                app:layout_constraintTop_toTopOf="@id/text_black_jack"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/value_vitorias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/text_vitorias"
+                app:layout_constraintEnd_toEndOf="@id/text_vitorias"
+                app:layout_constraintTop_toBottomOf="@id/text_vitorias"
+                tools:text="0"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_empates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Empates"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/text_vitorias"
+                app:layout_constraintTop_toTopOf="@id/text_black_jack"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/value_empates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/text_empates"
+                app:layout_constraintEnd_toEndOf="@id/text_empates"
+                app:layout_constraintTop_toBottomOf="@id/text_empates"
+                tools:text="0"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_derrotas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Derrotas"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/text_empates"
+                app:layout_constraintTop_toTopOf="@id/text_black_jack"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/value_derrotas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/text_derrotas"
+                app:layout_constraintEnd_toEndOf="@id/text_derrotas"
+                app:layout_constraintTop_toBottomOf="@id/text_derrotas"
+                tools:text="0"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</layout>

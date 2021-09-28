@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <shape>
+            <corners android:bottomLeftRadius="0dp" android:topLeftRadius="0dp" />
+            <solid android:color="@color/black" />
+            <padding android:left="15dp" android:right="15dp" />
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:bottomLeftRadius="0dp" android:topLeftRadius="0dp" />
+            <solid android:color="@color/mesa_poker" />
+            <stroke android:width="2dp" android:color="@color/mesa_poker_dark" />
+            <padding android:left="15dp" android:right="15dp" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <corners android:bottomLeftRadius="0dp" android:topLeftRadius="0dp" />
+            <stroke android:width="2dp" android:color="@color/mesa_poker" />
+            <padding android:left="15dp" android:right="15dp" />
+        </shape>
+    </item>
+</selector>
