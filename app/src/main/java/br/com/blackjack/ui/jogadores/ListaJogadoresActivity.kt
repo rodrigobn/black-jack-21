@@ -25,22 +25,19 @@ class ListaJogadoresActivity : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this)
         // ArrayList of class ItemsViewModel
         val data = tinyDB.getListObject(KEY_JOGADORES, Jogador::class.java) as ArrayList<Jogador>
-        sortBlackJack(data)
         // This will pass the ArrayList to our Adapter
-        val adapter = CustomAdapter(data)
+        val adapter = CustomAdapter(sortBlackJack(data))
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
     }
 
-    private fun sortBlackJack(jogadores: java.util.ArrayList<Jogador>) {
+    private fun sortBlackJack(jogadores: java.util.ArrayList<Jogador>): ArrayList<Jogador> {
         val n = jogadores.size
         var temp:Jogador
         for (i in 0 until n){
             var indexOfMin = i
             for(j in n-1 downTo  i){
                 if(jogadores[j].blackJack!! > jogadores[indexOfMin].blackJack!!)
-                    indexOfMin=j
-                if (jogadores[j].vitorias!! > jogadores[indexOfMin].vitorias!!)
                     indexOfMin=j
             }
             if(i!=indexOfMin){
@@ -49,5 +46,6 @@ class ListaJogadoresActivity : AppCompatActivity() {
                 jogadores[indexOfMin] = temp
             }
         }
+        return jogadores
     }
 }
