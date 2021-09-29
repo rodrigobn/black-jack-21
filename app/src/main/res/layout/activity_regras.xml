@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mesa_poker_dark"
+    android:padding="20dp"
+    tools:context=".ui.regras.RegrasActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="O objetivo é chegar o mais próximo possível do número 21 sem excedê-lo. O jogador que exceder o valor de 21 perde o jogo. É considerado como um BlackJack apenas a combinação de cartas que soma 21 pontos. (OBS.: é pertinente considerar os BlackJacks na definição da pontuação da partida)
+\n\nSerão vários jogos em uma partida. As cartas de todo o baralho devem ser distribuídas (embaralhadas) para os jogadores da partida. Uma partida dura enquanto todos os jogadores tenham pelo menos 1 carta a jogar. Em um jogo, um jogador satisfeito com a pontuação atual pode “parar” (não mostrar nova carta), enquanto os outros jogadores podem continuar (até todos pararem, ou até todos excederem 21, ou algum jogador ter um BlackJack na rodada).
+\n\nO jogador humano sempre joga primeiro."
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

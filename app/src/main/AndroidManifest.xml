@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BlackJack">
-        <activity android:name=".ui.jogadores.ListaJogadoresActivity"></activity>
+        <activity android:name=".ui.regras.RegrasActivity"></activity>
+        <activity android:name=".ui.jogadores.ListaJogadoresActivity" />
         <activity
             android:name=".ui.SplashScreenActivity"
             android:theme="@style/Theme.SplashScreen">
@@ -26,7 +27,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".ui.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
     </application>
 
 </manifest>

@@ -22,7 +22,7 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_margin="6dp"
-            android:text="@{String.format(@string/pontuacao_jogador, gameViewModel.pontuacaoRodadaJogador)}"
+            android:text="@{String.format(@string/pontuacao_jogador, gameViewModel.pontuacaoRodadaJogador ?? 0)}"
             tools:text="@string/pontuacao_jogador"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -34,7 +34,7 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:layout_margin="6dp"
-        android:text="@{String.format(@string/pontuacao_banca, gameViewModel.pontuacaoRodadaBanca)}"
+        android:text="@{String.format(@string/pontuacao_banca, gameViewModel.pontuacaoRodadaBanca ?? 0)}"
         tools:text="@string/pontuacao_banca"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_sua_pontuacao"/>

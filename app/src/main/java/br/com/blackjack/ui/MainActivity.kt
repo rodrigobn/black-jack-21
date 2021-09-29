@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.blackjack.databinding.ActivityMainBinding
 import br.com.blackjack.ui.jogadores.ListaJogadoresActivity
+import br.com.blackjack.ui.regras.RegrasActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,7 +38,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openRegras() {
-        //TODO("Not yet implemented")
+        val intent = Intent(this, RegrasActivity::class.java)
+        startActivity(intent)
     }
 
     private fun openRaking() {
